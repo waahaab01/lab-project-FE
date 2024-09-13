@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import SlotsSignIn from './components/login';
+import SignUpPage from './components/signup';
 import './App.css';
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AICardWrapper from './pages/indexCard';
+import IndexStepper from './pages/indexStepper'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/signin' element={<SlotsSignIn/>}/>
+      <Route path='/signup' element={<SignUpPage/>}/>
+      <Route path='*' element={<SlotsSignIn/>}/>
+      <Route path='/aiprodcuts' element={<AICardWrapper/>}/>
+      <Route path='/questions' element={<IndexStepper/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
