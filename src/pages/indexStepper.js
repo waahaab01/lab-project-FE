@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Box, Typography, Container } from '@mui/material';
 import QuestionnaireStepper from '../components/stepper';
 import ResponsiveAppBar from '../components/navbar'; 
+import Footer from '../components/footer';
 
 export default function IndexStepper() {
   return (
@@ -39,6 +40,7 @@ export default function IndexStepper() {
       >
         <QuestionnaireStepper />
       </Container>
+      <Footer/>
     </Box>
   );
 }
