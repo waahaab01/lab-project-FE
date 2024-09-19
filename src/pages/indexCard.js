@@ -4,13 +4,13 @@ import AIPPTGeneratorCard from "../components/aiPptCard";
 import MultiActionAreaCard from "../components/aiImageCard";
 import AIVideoGeneratorCard from "../components/aiVideoCard";
 import ResponsiveAppBar from "../components/navbar";
+import Footer from "../components/footer";
 export default function AICardWrapper() {
   return (
-    <>
+    <div className="bg-[#000000]">
       <ResponsiveAppBar />
       <Container
         sx={{
-          backgroundColor: "#121212",
           minHeight: "100vh",
           padding: "40px 20px",
           display: "flex",
@@ -46,6 +46,7 @@ export default function AICardWrapper() {
           </Grid>
         </Grid>
       </Container>
-    </>
+      <Footer/>
+    </div>
   );
 }

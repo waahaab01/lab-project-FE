@@ -13,7 +13,7 @@ export default function MultiActionAreaCard() {
     <Card
       sx={{
         maxWidth: { xs: 300, sm: 400, md: 500 },
-        height: "90%",
+        height: "100%",
         margin: "20px auto",
         backgroundColor: "#191825",
         color: "#FFFFFF",
@@ -39,14 +39,14 @@ export default function MultiActionAreaCard() {
             gutterBottom
             variant="h5"
             component="div"
-            sx={{ color: "#FFA3FD", textAlign: "center" }}
+            sx={{ color: "#FFA3FD", textAlign: "center",paddingTop: "10px" }}
           >
             {" "}
             AI Art Generator{" "}
           </Typography>
           <Typography
             variant="body2"
-            sx={{ color: "#FFFFFF", textAlign: "center", marginTop: "10px" }}
+            sx={{ color: "#FFFFFF", textAlign: "center", paddingTop: "20px" }}
           >
             Unleash the power of AI to generate stunning and unique artwork with
             just a click. Explore endless creativity through AI-driven image
@@ -54,7 +54,7 @@ export default function MultiActionAreaCard() {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions sx={{ justifyContent: "center", padding: "0px 16px 16px" }}>
+      <CardActions sx={{ justifyContent: "center", paddingTop: "20px" }}>
         <Button
           size="large"
           sx={{

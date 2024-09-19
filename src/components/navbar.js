@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,8 +14,12 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Home', 'Contact', 'About Us'];
-const settings = ['Profile', 'Logout'];
+const pages = [
+  { name: 'Home', path: '/' },
+  { name: 'Contact', path: '/contact' },
+  { name: 'About Us', path: '/about-us' }
+];
+const settings = [{name: 'Profile',path:'/profile'}, {name:'Logout',path:'/logout'}];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -103,8 +108,10 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Link to={page.path} style={{ textDecoration: 'none', color: '#121212' }}>
+                    <Typography sx={{ textAlign: 'center' }}>{page.name}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -133,11 +140,13 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.name}
                 onClick={handleCloseNavMenu}
+                component={Link}
+                to={page.path}
                 sx={{ my: 2, color: '#FFFFFF', display: 'block' }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
@@ -180,11 +189,11 @@ function ResponsiveAppBar() {
                 }
               }}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>
-                    {setting}
-                  </Typography>
+              {settings.map((page) => (
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Link to={page.path} style={{ textDecoration: 'none', color: '#121212' }}>
+                    <Typography sx={{ textAlign: 'center' }}>{page.name}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
