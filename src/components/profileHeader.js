@@ -26,7 +26,7 @@ const ProfileHeader = () => {
           onMouseLeave={() => setShowUpload(false)}
         >
           <img
-            src={image || "default-profile.png"} // Provide a default image URL
+            src={image || "default-profile.png"}
             alt="Profile"
             className="w-full h-full object-cover"
           />
