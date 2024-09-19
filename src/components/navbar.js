@@ -19,7 +19,7 @@ const pages = [
   { name: 'Contact', path: '/contact' },
   { name: 'About Us', path: '/about-us' }
 ];
-const settings = ['Profile', 'Logout'];
+const settings = [{name: 'Profile',path:'/profile'}, {name:'Logout',path:'/logout'}];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -189,11 +189,11 @@ function ResponsiveAppBar() {
                 }
               }}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>
-                    {setting}
-                  </Typography>
+              {settings.map((page) => (
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Link to={page.path} style={{ textDecoration: 'none', color: '#121212' }}>
+                    <Typography sx={{ textAlign: 'center' }}>{page.name}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>

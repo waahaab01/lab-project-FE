@@ -5,6 +5,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AICardWrapper from './pages/indexCard';
 import IndexStepper from './pages/indexStepper'
 import IndexAbout from './pages/indexAbout';
+import IndexContact from './pages/indexContact';
+import IndexProfile from './pages/indexProfile';
+
 
 function App() {
   return (
@@ -16,6 +19,8 @@ function App() {
       <Route path='/aiprodcuts' element={<AICardWrapper/>}/>
       <Route path='/questions' element={<IndexStepper/>}/>
       <Route path='/about-us' element={<IndexAbout/>}/>
+      <Route path='/contact' element={<IndexContact/>}/>
+      <Route path='/profile' element={<IndexProfile/>}/>
     </Routes>
     </BrowserRouter>
   );
