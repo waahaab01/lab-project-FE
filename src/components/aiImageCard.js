@@ -7,8 +7,14 @@ import Button from "@mui/material/Button";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import aicardimage from "../assets/images/aicardimage.jpg";
+import {useNavigate} from 'react-router-dom';
+
 
 export default function MultiActionAreaCard() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/ai-image-generator');
+  }
   return (
     <Card
       sx={{
@@ -65,6 +71,7 @@ export default function MultiActionAreaCard() {
             ":hover": { backgroundColor: "#FFA3FD" },
             boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
           }}
+          onClick={handleClick}
         >
           {" "}
           Generate Image

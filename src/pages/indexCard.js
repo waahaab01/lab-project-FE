@@ -3,12 +3,10 @@ import { Container, Grid, Typography, Box } from "@mui/material";
 import AIPPTGeneratorCard from "../components/aiPptCard";
 import MultiActionAreaCard from "../components/aiImageCard";
 import AIVideoGeneratorCard from "../components/aiVideoCard";
-import ResponsiveAppBar from "../components/navbar";
 import Footer from "../components/footer";
 export default function AICardWrapper() {
   return (
     <div className="bg-[#000000]">
-      <ResponsiveAppBar />
       <Container
         sx={{
           minHeight: "100vh",
@@ -16,6 +14,7 @@ export default function AICardWrapper() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          transition: "all 0.5s ease-in"
         }}
       >
         <Typography
